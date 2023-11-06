@@ -1,0 +1,133 @@
+.contactme{
+    overflow:hidden;
+   margin: 5rem auto ;
+    display: flex;
+    flex-direction:column;
+    align-items: center;    
+}
+
+.contact{
+    overflow:hidden;
+    width: 28rem;
+    max-width: 65rem;
+    margin: 3rem auto;
+    background: transparent;
+    border-radius:5px ;
+   box-shadow: 5px 5px 5px 10px #1a2323 ;
+ 
+   padding-top: 1rem;
+}
+
+
+
+.cname{
+    color: white;
+}
+
+.name{
+    margin-left: 3rem;
+    display: flex;
+    flex-direction: row;
+    column-gap: 1rem;
+}
+.bothname{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.phone{
+    margin-top: 2rem;
+
+    display: flex;
+    flex-direction: column;
+width: 22.5rem;
+margin-left: 3rem;
+}
+.emailmsg{
+    margin-top: 2rem;
+
+    display: flex;
+    flex-direction: column;
+width: 22.5rem;
+margin-left: 3rem;
+
+}
+
+.msg{
+    margin-top: 2rem;
+
+    display: flex;
+    flex-direction: column;
+width: 22.5rem;
+margin-left: 3rem;
+}
+.button{
+    margin-top: 2rem;
+
+    background: #1a2323;
+    margin: 1rem 10rem;
+    padding: 0.75rem  2rem;
+    border-radius: 2rem;
+    border: none;
+    color: rgb(252, 0, 0);
+    align-items: center;
+    justify-content: center;
+}
+
+
+    .button:hover{
+        background: rgb(252, 0, 0);
+        box-shadow: 5px 3px 3px rgb(92, 3, 3);
+        color: black;
+    
+    }
+
+
+.bothname>input{
+    height: 2.5rem;
+    border:1px solid black;
+
+}
+.emailmsg>input{
+    height: 2.5rem;
+    border:1px solid black;
+
+}
+
+.name>input{
+    height: 2.5rem;
+    border:1px solid black;
+
+}
+
+.phone>input{
+    height: 2.5rem;
+    border:1px solid black;
+
+}
+.msg>textarea{
+    height: 4.5rem;
+    border:1px solid black;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .contact {
+        width: 90%; /* Adjusted width for tablet screens */
+    }
+}
+
+@media (max-width: 500px) {
+    .contact {
+        width: 95%; /* Adjusted width for mobile screens */
+    }
+
+    .name {
+        flex-direction: column; /* Display first and last name in a column */
+    }
+
+    .name > input {
+        margin-bottom: 0.5rem; /* Add padding to each input element */
+    }
+}
