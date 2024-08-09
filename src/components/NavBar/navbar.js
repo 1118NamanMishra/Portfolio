@@ -1,8 +1,7 @@
 import React from 'react';
 import './navbar.css';
 import logo from '../../assets/logo.png';
-// import { Link } from 'react-scroll';
-// import HamburgerMenu from './menu';
+
 
 const Navbar = () => {
   return (
@@ -19,7 +18,7 @@ const Navbar = () => {
         Contact me
           </a>
       </button>
-      {/* <HamburgerMenu /> */}
+      { */}
     </nav>
   );
 }
