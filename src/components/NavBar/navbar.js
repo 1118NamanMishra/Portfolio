@@ -18,7 +18,7 @@ const Navbar = () => {
         Contact me
           </a>
       </button>
-      { */}
+      { }
     </nav>
   );
 }
