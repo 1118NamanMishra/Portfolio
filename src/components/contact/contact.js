@@ -1,8 +1,6 @@
 
 import React, { Component } from 'react';
 import './contact.css';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css'; 
 
 class ContactForm extends Component {
   constructor(props) {
@@ -24,7 +22,7 @@ class ContactForm extends Component {
   handleSubmit = async (event) => {
     event.preventDefault();
     const { fullName, phoneNumber, email, message } = this.state;
-
+  
     if (!fullName || !phoneNumber || !email || !message) {
       const errors = {
         fullName: !fullName,
@@ -34,25 +32,11 @@ class ContactForm extends Component {
       };
       this.setState({ errors });
     } else {
-      try {
-        await fetch('http://localhost:8080', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ fullName, phoneNumber, email, message }),
-        });
-        toast.success('Message sent successfully!');
-        this.setState({
-          fullName: '',
-          phoneNumber: '',
-          email: '',
-          message: '',
-          errors: {},
-        });
-      } catch (error) {
-        toast.error('Failed to send message.');
-      }
+      await new Promise(resolve => setTimeout(resolve, 100));
+      window.location.reload(true);
     }
   };
+  
 
   render() {
     const { fullName, phoneNumber, email, message, errors } = this.state;
@@ -115,7 +99,6 @@ class ContactForm extends Component {
             </div>
           </form>
         </div>
-        <ToastContainer />
       </section>
     );
   }
