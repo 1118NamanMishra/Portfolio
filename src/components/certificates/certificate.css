@@ -1,20 +1,16 @@
 .carousel {
-    max-width: 100%; /* Make the carousel responsive */
-    /* border: 2px solid black; */
-    margin: 0 auto; /* Center the carousel */
-    width: 80%; /* Adjust the width as needed */
-    max-width: 40rem; /* Set a maximum width for larger screens */
-    
+    max-width: 100%; 
+    margin: 0 auto; 
+    width: 80%; 
+    max-width: 40rem; 
   }
   
   .imgs {
     height: auto; 
     width: 100%;
-    padding: 1rem; /* Adjust padding as needed */
-    /* border: 2px solid black; */
+    padding: 1rem; 
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
-  

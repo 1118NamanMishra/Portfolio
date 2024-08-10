@@ -80,7 +80,8 @@
   transition: opacity 0.5s ease-in-out;
   max-height: 100%;
   max-width: 90%;
-  overflow: hidden;
+  overflow: auto; 
+  overflow-x: hidden;
 }
 
 .cardimg {
@@ -100,12 +101,57 @@
 .card p {
   font-weight: 400;
   font-size: 0.9rem;
-  max-width: 100%; /* Adjusted to 100% for responsiveness */
+  max-width: 100%; 
   padding: 0 1rem;
   scroll-behavior: smooth;
-  word-wrap: break-word; /* Added for long words on small screens */
+  word-wrap: break-word; 
+  overflow-y: auto; 
+  max-height: 200px; 
 }
 
 .card:hover .card-content {
   opacity: 1;
+}
+
+
+
+
+.card-content {
+  position: absolute;
+  top: 5%;
+  left: 1rem;
+  text-align: left;
+  padding: 0rem;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  max-height: 100%;
+  max-width: 90%;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.card-content::-webkit-scrollbar {
+  width: 0; 
+  height: 0; 
+}
+
+.card p {
+  font-weight: 400;
+  font-size: 0.9rem;
+  max-width: 100%;
+  padding: 0 1rem;
+  scroll-behavior: smooth;
+  word-wrap: break-word;
+  overflow-y: auto;
+  max-height: 200px;
+}
+
+.card p::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.card-content::-webkit-scrollbar {
+  width: 0;
+  height: 0; 
 }

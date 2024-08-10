@@ -12,21 +12,22 @@ import cc from '../../assets/cc.png';
 import psb from '../../assets/psb.png';
 import psi from '../../assets/psi.png';
 import sql from '../../assets/sql.png';
-import cpart from '../../assets/cpart.png';
-import exp from '../../assets/exp.png';
+import taship from '../../assets/TAship.png';
+import aws from '../../assets/aws.png';
+import pe1 from '../../assets/pe1.png';
+import pe2 from '../../assets/pe2.png';
+import itn from '../../assets/CCNA ITN.png';
+import ensa from '../../assets/CCNA ENSA.png';
+import srwe from '../../assets/CCNA SRWE.png';
 
 
-// import calc from '../../assets/calc.png'
 
 function MyCarousel() {
     return (
       <div className='carousel'>
-        {/* <h2>React Carousel</h2> */}
+
         <Carousel showThumbs={true} showStatus={false}>
-          {/* <div className='imgs'>
-            <img src={exp} className="zoom-on-hover"  alt="Image 1" />
-            <p className="legend">Certificate of Experience(Internship)</p>
-          </div> */}
+         
           <div className='imgs'>
             <img src={cpe} className="zoom-on-hover"  alt="Image 2" />
             <p className="legend">Excellenece in Competitive Programming</p>
@@ -55,10 +56,7 @@ function MyCarousel() {
             <img src={psb} className="zoom-on-hover"  alt="Image 8" />
             <p className="legend">Problem Solving(Basic)</p>
           </div>
-          {/* <div className='imgs'>
-            <img src={cpart} className="zoom-on-hover"  alt="Image 9" />
-            <p className="legend">Participation</p>
-          </div> */}
+       
           <div className='imgs'>
             <img src={c} className="zoom-on-hover"  alt="Image 10" />
             <p className="legend">C++ Completion</p>
@@ -71,6 +69,35 @@ function MyCarousel() {
             <img src={cp} className="zoom-on-hover"  alt="Image 12" />
             <p className="legend">Competitive Programming Completion</p>
           </div>
+          <div className='imgs'>
+            <img src={taship} className="zoom-on-hover"  alt="Image 12" />
+            <p className="legend">TAship Completion</p>
+          </div>
+          <div className='imgs'>
+            <img src={aws} className="zoom-on-hover"  alt="Image 12" />
+            <p className="legend">AWS</p>
+          </div>
+          <div className='imgs'>
+            <img src={pe1} className="zoom-on-hover"  alt="Image 12" />
+            <p className="legend">Python Essential 1</p>
+          </div>
+          <div className='imgs'>
+            <img src={pe2} className="zoom-on-hover"  alt="Image 12" />
+            <p className="legend">Python Essential 2</p>
+          </div>
+          <div className='imgs'>
+            <img src={itn} className="zoom-on-hover"  alt="Image 12" />
+            <p className="legend">CCNA: ITN</p>
+          </div>
+          <div className='imgs'>
+            <img src={ensa} className="zoom-on-hover"  alt="Image 12" />
+            <p className="legend">CCNA : ENSA</p>
+          </div>
+          <div className='imgs'>
+            <img src={srwe} className="zoom-on-hover"  alt="Image 12" />
+            <p className="legend">CCNA : SRWE</p>
+          </div>
+         
          
         </Carousel>
       </div>

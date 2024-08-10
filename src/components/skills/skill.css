@@ -9,14 +9,16 @@
     justify-content: center;
     text-align: center;
     
+    
 }
-
-.skiltitle{
+.skiltitle {
     font-size: 3rem;
     font-weight: 600;
     padding-top: 3rem;
     margin-bottom: 2rem;
+    margin-top: 2rem; 
 }
+
 .skilld{
     font-weight: 400;
     font-size: 1rem;

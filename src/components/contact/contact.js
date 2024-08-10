@@ -1,12 +1,14 @@
+
 import React, { Component } from 'react';
 import './contact.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; 
 
 class ContactForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      firstName: '',
-      lastName: '',
+      fullName: '',
       phoneNumber: '',
       email: '',
       message: '',
@@ -21,26 +23,39 @@ class ContactForm extends Component {
 
   handleSubmit = async (event) => {
     event.preventDefault();
-    const { firstName, lastName, phoneNumber, email, message } = this.state;
-  
-    if (!firstName || !lastName || !phoneNumber || !email || !message) {
+    const { fullName, phoneNumber, email, message } = this.state;
+
+    if (!fullName || !phoneNumber || !email || !message) {
       const errors = {
-        firstName: !firstName,
-        lastName: !lastName,
+        fullName: !fullName,
         phoneNumber: !phoneNumber,
         email: !email,
         message: !message,
       };
       this.setState({ errors });
     } else {
-      await new Promise(resolve => setTimeout(resolve, 100));
-      window.location.reload(true);
+      try {
+        await fetch('http://localhost:8080', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ fullName, phoneNumber, email, message }),
+        });
+        toast.success('Message sent successfully!');
+        this.setState({
+          fullName: '',
+          phoneNumber: '',
+          email: '',
+          message: '',
+          errors: {},
+        });
+      } catch (error) {
+        toast.error('Failed to send message.');
+      }
     }
   };
-  
 
   render() {
-    const { firstName, lastName, phoneNumber, email, message, errors } = this.state;
+    const { fullName, phoneNumber, email, message, errors } = this.state;
 
     return (
       <section className='contactme'>
@@ -48,29 +63,17 @@ class ContactForm extends Component {
         <div className='contact'>
           <form onSubmit={this.handleSubmit}>
             <div className='name'>
-              <div className='bothname'>
-                <label htmlFor="firstName" className='cname'>First Name</label>
-                <input
-                  type="text"
-                  id="firstName"
-                  name="firstName"
-                  required
-                  value={firstName}
-                  onChange={this.handleInputChange}
-                />
-                {errors.firstName && <span className="error">First name is required</span>}
-              </div>
-              <div className='bothname'>
-                <label htmlFor="lastName" className='cname'>Last Name</label>
-                <input
-                  type="text"
-                  id="lastName"
-                  name="lastName"
-                  value={lastName}
-                  onChange={this.handleInputChange}
-                />
-                {errors.lastName && <span className="error">Last name is required</span>}
-              </div>
+              <label htmlFor="fullName" className='cname'>Full Name</label>
+              <input
+                type="text"
+                id="fullName"
+                name="fullName"
+                placeholder="Enter your full name"
+                required
+                value={fullName}
+                onChange={this.handleInputChange}
+              />
+              {errors.fullName && <span className="error">Full name is required</span>}
             </div>
             <div className='phone'>
               <label htmlFor="phoneNumber" className='cname'>Phone</label>
@@ -78,6 +81,7 @@ class ContactForm extends Component {
                 type="text"
                 id="phoneNumber"
                 name="phoneNumber"
+                placeholder="Enter your phone number"
                 value={phoneNumber}
                 onChange={this.handleInputChange}
               />
@@ -89,6 +93,7 @@ class ContactForm extends Component {
                 type="email"
                 id="email"
                 name="email"
+                placeholder="Enter your email address"
                 value={email}
                 onChange={this.handleInputChange}
               />
@@ -99,6 +104,7 @@ class ContactForm extends Component {
               <textarea
                 id="message"
                 name="message"
+                placeholder="Enter your message"
                 value={message}
                 onChange={this.handleInputChange}
               />
@@ -109,6 +115,7 @@ class ContactForm extends Component {
             </div>
           </form>
         </div>
+        <ToastContainer />
       </section>
     );
   }

@@ -1,5 +1,4 @@
 import React from 'react';
-// import {ReactDOM} from 'react';
 import Navbar from './components/NavBar/navbar';
 import Intro from './components/intro/Intro';
 import Skill from './components/skills/skill';

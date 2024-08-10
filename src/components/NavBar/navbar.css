@@ -1,100 +1,17 @@
-/* .navbar{
-    background: #253338;
-    height: 5rem;
-    width: 100vw;
-    max-width: 75rem;
-    margin: 5px auto;
-    padding: 1rem  2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    z-index: 3;
-}
-.logo{
-    object-fit:contain;
-    height: 3rem;
-    width: 4rem;
-    cursor: pointer;
-    
-
-}
-
-
-.dskmenu{
-    border: none;
-    height: 2rem;
-    padding: 0.2rem;
-    border-radius: 0.5rem;
-    box-shadow:0 4px 9px 0 red;
-    
-}
-.dsktopmenulistitm {
-    margin: 1rem;
-    cursor: pointer;
-    color: black;
-  font-weight: bold;
-  font-size: 1rem;
-
-}
-.dsktopmenulistitm:hover{ 
-    color: rgb(255,0,0);
-    border-bottom: 2px solid rgb(255,0,0);
-
-
-}
-.dskbtn{
-    background: #1e2a2a;
-    margin: 1rem 0;
-    padding: 0.75rem  2rem;
-    border-radius: 2rem;
-    border: none;
-    align-items: center;
-    justify-content: center;
-   
-}
-.dskbtn:hover{
-    background: rgb(255,0,0);
-    box-shadow: 5px 3px 3px rgb(92, 3, 3);
-    color: black;
-
-} 
-
-
-@media screen and (max-width:700px) {
-    .dsktopmenulistitm{
-        margin: 1rem;
-        width: 1rem;
-        cursor: pointer;
-        color: black;
-      font-weight: bold;
-      font-size: 1rem;
-
-    }
-} */
-
 .navbar {
     background: #253338;
-    /* background: red; */
     height: 5rem;
     width: 100vw;
     max-width: 75rem;
     margin: 5px auto;
     padding: 1rem 2rem;
     display: flex;
+    flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     position: sticky;
     top: 0;
     z-index: 3;
-}
-
-.logo {
-    object-fit: contain;
-    height: 3rem;
-    width: 4rem;
-    cursor: pointer;
 }
 
 .dskmenu {
@@ -111,6 +28,21 @@
     color: white;
     font-weight: bold;
     font-size: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    .dsktopmenulistitm {
+        margin: 0.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .dsktopmenulistitm {
+        margin: 0.25rem;
+        font-size: 0.9rem;
+        word-wrap: break-word;
+    }
 }
 
 .dsktopmenulistitm:hover {
@@ -134,13 +66,21 @@
     color: white;
 }
 
+@media (max-width: 768px) {
+    .dskmenu {
+        height: 2.5rem;
+        padding: 0.4rem;
+        border-radius: 0.4rem;
+        box-shadow: 0 3px 7px 0 red;
+    }
+}
 
-@media screen and (width:700px) {
-    .logo {
-        object-fit: contain;
-        height: 2rem;
-        width: 3rem;
-        cursor: pointer;
-        left: -1rem;
+@media (max-width: 480px) {
+    .dskmenu {
+        height: 3rem;
+        padding: 0.5rem;
+        border-radius: 0.3rem;
+        box-shadow: 0 2px 5px 0 red;
+        width: 75vw;
     }
 }
